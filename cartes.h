@@ -3,19 +3,19 @@
 
 //On liste les types de cartes
 typedef enum {
-    NUMERO;
-    BONUS;
+    NUMERO,
+    BONUS,
 } TypeCarte;
 
 //On liste les bonus
 typedef enum {
-    SANS_BONUS;
-    PLUS_2;
-    PLUS_4;
-    PLUS_6;
-    PLUS_8;
-    PLUS_10;
-    FOIS_2;
+    SANS_BONUS,
+    PLUS_2,
+    PLUS_4,
+    PLUS_6,
+    PLUS_8,
+    PLUS_10,
+    FOIS_2,
 } TypeBonus;
 
 //La structure d'une carte
