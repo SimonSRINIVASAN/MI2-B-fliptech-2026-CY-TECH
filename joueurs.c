@@ -1,0 +1,1 @@
+//Ici on fait tout ce qui arrive a un joueur genre ajouter une carte calculer le score etc

@@ -1,0 +1,1 @@
+//ici c'est le code des fonctions d'affichage qu'on a lister dans l'autre fichier

@@ -1,0 +1,1 @@
+//ici bah c'est ou le jeu se passe genre jouer un tour designer un vainqueur mettre un bonus etc
