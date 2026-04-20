@@ -25,4 +25,6 @@ typedef struct {
     TypeBonus bonus;
 } Carte;
 
+void creer_pioche (Carte pioche[]);
+
 #endif
