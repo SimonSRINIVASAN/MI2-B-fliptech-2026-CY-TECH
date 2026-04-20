@@ -7,6 +7,7 @@ void creer_pioche (Carte pioche[]) {
     pioche[0].bonus = SANS_BONUS;
     pioche[0].type = NUMERO;
     pioche[0].valeur = 0;
+    i++;
 
     //On fabrique les cartes de 1 à 12
     for (int valeur_carte = 1; valeur_carte <= 12; valeur_carte++) {
