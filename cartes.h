@@ -27,4 +27,6 @@ typedef struct {
 
 void creer_pioche (Carte pioche[]);
 
+void melanger_pioche (Carte pioche[]);
+
 #endif

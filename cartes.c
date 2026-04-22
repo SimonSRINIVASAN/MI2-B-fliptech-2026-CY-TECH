@@ -1,5 +1,8 @@
 #include "cartes.h"
+#include <stdlib.h>
+#include <time.h>
 
+//on cree la pioche
 void creer_pioche (Carte pioche[]) {
     int i = 0;
 
@@ -55,4 +58,20 @@ void creer_pioche (Carte pioche[]) {
     pioche[i].type = BONUS;
     pioche[i].valeur = 0;
     //Pas de i++ car c'est la dernière carte 
+}
+
+//On melange la pioche 
+
+void melanger_pioche (Carte pioche[]) {
+    int i, j;
+    Carte melange;
+
+    //On parcourt le paquet a l'envers
+    for (i = 84; i >= 0; i--) {
+        j = rand() % (i+1);
+
+        melange = pioche[i];
+        pioche[i] = pioche[j];
+        pioche[j] = melange;
+    } 
 }
