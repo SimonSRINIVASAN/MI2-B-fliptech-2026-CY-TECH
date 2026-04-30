@@ -75,3 +75,22 @@ void melanger_pioche (Carte pioche[]) {
         pioche[j] = melange;
     } 
 }
+
+//Fonction pour piocher une carte
+Carte piocher_carte(Carte pioche[], int* cartes_restantes) {
+    Carte carte_vide;
+
+    //on test si la pioche est vide
+    if (*cartes_restantes <= 0) {
+        carte_vide.type = 0;
+        carte_vide.valeur = 0;
+        carte_vide.bonus = 0;
+
+        return carte_vide;
+    } //si ya plus de carte on renvoie une carte avec tout a 0 pour dire que la pioche est vide
+
+    *cartes_restantes = *cartes_restantes - 1; //on diminue la pioche de 1
+    //on diminue avant de donner la carte car on a 85 cartes mais le tableau s'arrete a 84
+
+    return pioche[*cartes_restantes];
+}

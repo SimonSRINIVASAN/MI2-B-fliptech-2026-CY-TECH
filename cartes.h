@@ -29,4 +29,6 @@ void creer_pioche (Carte pioche[]);
 
 void melanger_pioche (Carte pioche[]);
 
+Carte piocher_carte(Carte pioche[], int* cartes_restantes);
+
 #endif
