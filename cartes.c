@@ -94,3 +94,4 @@ Carte piocher_carte(Carte pioche[], int* cartes_restantes) {
 
     return pioche[*cartes_restantes];
 }
+
