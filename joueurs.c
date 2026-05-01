@@ -16,13 +16,13 @@ Joueur* initialiser_joueurs(int *nb_joueurs){
 
     for (int i=0; i < *nb_joueurs; i++){
         printf("Entrez le pseudo du joueur %d : ", i+1);
-        scanf("%s", liste_joueurs[i].pseudo);
+        scanf("%49s", liste_joueurs[i].pseudo);
 
         liste_joueurs[i].score = 0;
         liste_joueurs[i].nombre_cartes = 0;
         liste_joueurs[i].etat = EN_JEU;
     }
-    
+
     return liste_joueurs;
 }
 
