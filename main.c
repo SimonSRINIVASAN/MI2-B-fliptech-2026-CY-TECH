@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <time.h>     
 #include "cartes.h"  
+#include "affichage.h"
 
 int main() {
 
@@ -40,5 +41,9 @@ int main() {
     printf("il reste %d carte dans la pioche\n", carte_jeu);
     printf("\n\n\n");
 
+    //test affichage carte
+    afficher_carte(test_piocher);
+    printf("\n\n\n");
+    
     return 0;
 }

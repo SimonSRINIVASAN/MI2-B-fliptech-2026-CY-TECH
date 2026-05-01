@@ -2,25 +2,7 @@
 #define AFFICHAGE_H
 #include "cartes.h"
 
-//ici c'est genre la liste des options d'affichage du jeu
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void afficher_carte (Carte a);
 
 
 
