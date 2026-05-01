@@ -3,6 +3,9 @@
 
 #include "cartes.h"
 
+#define TAILLE_MAX_PSEUDO 50
+#define TOTAL_CARTES_JEU 85
+
 //La structure de l'etat d'un joueur
 typedef enum {
     EN_JEU,       //0 
@@ -12,9 +15,9 @@ typedef enum {
 
 //La structure d'un joueur
 typedef struct {
-    char pseudo[50];
+    char pseudo[TAILLE_MAX_PSEUDO];
     int score;
-    Carte main[85];
+    Carte main[TOTAL_CARTES_JEU];
     int nombre_cartes;
     Etat_Joueur etat;
 } Joueur;
