@@ -3,10 +3,10 @@
 
 void afficher_carte (Carte a) {
     if (a.type == 0) {
-        printf("Carte numero : %d\n", a.valeur);
+        printf("carte numero : %d\n", a.valeur);
     }
     else if (a.type == 1) {
-        printf("Carte BONUS !\n");
+        printf("carte BONUS !\n");
 
         switch (a.bonus) {
             case 0 : printf("Aucun effet\n");

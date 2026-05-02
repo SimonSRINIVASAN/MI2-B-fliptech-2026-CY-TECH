@@ -4,7 +4,7 @@
 
 Joueur* initialiser_joueurs(int *nb_joueurs){
 
-    printf("Combien de joueurs vont participer ? ");
+    printf("Combien de joueurs vont participer ?\n");
     scanf("%d", nb_joueurs);
 
     Joueur *liste_joueurs = malloc((*nb_joueurs) * sizeof(Joueur));
