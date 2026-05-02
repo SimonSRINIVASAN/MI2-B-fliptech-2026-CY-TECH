@@ -22,5 +22,7 @@ typedef struct {
     Etat_Joueur etat;
 } Joueur;
 
+Joueur* initialiser_joueurs(int *nb_joueurs);
+
 
 #endif

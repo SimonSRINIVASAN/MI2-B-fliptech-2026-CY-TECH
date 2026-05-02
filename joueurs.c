@@ -9,7 +9,7 @@ Joueur* initialiser_joueurs(int *nb_joueurs){
 
     Joueur *liste_joueurs = malloc((*nb_joueurs) * sizeof(Joueur));
 
-    if (liste_joueurs ==NULL){
+    if (liste_joueurs == NULL){
         printf("Erreur : espace mémoire insuffisant.\n");
         exit(1);
     }
@@ -22,6 +22,7 @@ Joueur* initialiser_joueurs(int *nb_joueurs){
         liste_joueurs[i].nombre_cartes = 0;
         liste_joueurs[i].etat = EN_JEU;
     }
+    printf("\n");
 
     return liste_joueurs;
 }
