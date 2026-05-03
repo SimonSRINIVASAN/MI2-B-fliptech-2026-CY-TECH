@@ -7,21 +7,68 @@
 #include "cartes.h"
 #include "affichage.h"
 #include "joueurs.h"
-#include "jeu.h" // N'oublie pas d'inclure le nouveau menu du jeu !
+#include "jeu.h" 
+
+#define SCORE_VICTOIRE 200 // On définit le score pour gagner la partie
 
 int main() {
     srand(time(NULL)); 
 
     printf("========================================\n");
-    printf("           CREATION DES JOUEURS\n");
+    printf("         BIENVENUE DANS FLIP 7 !        \n");
     printf("========================================\n\n");
+
     int nb_joueurs = 0;
     Joueur* liste = initialiser_joueurs(&nb_joueurs);
 
-    //On lance la partie avec nos joueurs 
-    lancer_partie(liste, nb_joueurs);
+    int partie_terminee = 0; //C'est l'indication pour savoir si quelqu'un a gagné
+    int numero_manche = 1;
 
-    //faut rendre la mémoire à la fin
+    //Ca c'est la boucle de la partie
+    while (partie_terminee == 0) {
+        
+        printf("\n\n>>> MANCHE %d <<<\n", numero_manche);
+        
+        //On lance une manche
+        lancer_partie(liste, nb_joueurs);
+
+        //a la fin de la manche faut vérifier si quelqu'un a atteint 200 points
+        int score_max = 0;
+        int id_gagnant = -1;
+
+        for (int i = 0; i < nb_joueurs; i++) {
+            //Si on trouve un score plus grand que le score_max il prend sa place
+            if (liste[i].score > score_max) {
+                score_max = liste[i].score;
+                id_gagnant = i;
+            }
+        }
+
+        //on verifie que le meilleur joueur a dépassé 200 points
+        if (score_max >= SCORE_VICTOIRE) {
+            partie_terminee = 1; //On met l'indication a 1 pour que la boucle s'arrete
+            
+            printf("\n========================================\n");
+            printf("      FIN DE LA PARTIE !  \n");
+            printf(" Le grand gagnant est %s avec %d points !\n", liste[id_gagnant].pseudo, score_max);
+            printf("========================================\n");
+        } 
+        else {
+            //Si personne n'a 200 points on prépare la prochaine manche
+            numero_manche++;
+            
+            //On doit remettre les joueurs à zéro enlever leurs cartes de la main et tout
+            for (int i = 0; i < nb_joueurs; i++) {
+                liste[i].nombre_cartes = 0;
+                liste[i].etat = EN_JEU;
+            }
+            
+            printf("\nPersonne n'a encore %d points. Preparez-vous pour la suite\n", SCORE_VICTOIRE);
+            system("pause"); //Fait une petite pause avant de relancer
+        }
+    }
+
+    //On rend la mémoire à la fin
     free(liste); 
 
     return 0;

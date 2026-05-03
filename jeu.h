@@ -6,10 +6,12 @@
 
 void lancer_partie (Joueur* liste_joueurs, int nb_joueurs);
 
-void jouer_tour (Joueur* joueur_actuel, Carte pioche[], int* cartes_restantes);
+int jouer_tour (Joueur* joueur_actuel, Carte pioche[], int* cartes_restantes);
+
+void calcule_score_manche(Joueur* joueur);
 
 
-//ici on doit definir les regles et l'etat de la partie etc
+
 
 
 
