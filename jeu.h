@@ -4,7 +4,7 @@
 #include "joueurs.h"
 #include "cartes.h"
 
-void lancer_partie (Joueur* liste_joueurs, int nb_joueurs);
+void lancer_partie (Joueur* liste_joueurs, int nb_joueurs,Carte pioche[], int* cartes_restantes);
 
 int jouer_tour (Joueur* joueur_actuel, Carte pioche[], int* cartes_restantes);
 

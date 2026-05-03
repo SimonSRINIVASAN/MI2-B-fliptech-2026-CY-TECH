@@ -90,30 +90,18 @@ int jouer_tour(Joueur* joueur_actuel, Carte pioche[], int* cartes_restantes) {
 }
 
 
-void lancer_partie(Joueur* liste_joueurs, int nb_joueurs) {
-    //On prépare la pioche pour la partie
-    Carte pioche[TOTAL_CARTES_JEU]; //Ya le #define dans joueur.h
-    int cartes_restantes = TOTAL_CARTES_JEU;
-    
-    creer_pioche(pioche);
-    melanger_pioche(pioche);
+void lancer_partie(Joueur* liste_joueurs, int nb_joueurs, Carte pioche[], int* cartes_restantes) {
 
     printf("\n\n========================================\n");
     printf("           DEBUT DE LA MANCHE !\n");
     printf("========================================\n");
 
-    //On fait jouer chaque joueur à tour de rôle
     for (int i = 0; i < nb_joueurs; i++) {
-
-        //On stocke la réponse de jouer_tour 1 si Flip 7, 0 sinon
-        int flip7 = jouer_tour(&liste_joueurs[i], pioche, &cartes_restantes);
+        // On passe bien l'adresse de cartes_restantes à jouer_tour
+        int flip7 = jouer_tour(&liste_joueurs[i], pioche, cartes_restantes);
         
-        //Si le joueur vient de faire un Flip 7
         if (flip7 == 1) {
             printf("\n🚨 %s A FAIT UN FLIP 7 ! LA MANCHE S'ARRETE IMMEDIATEMENT ! 🚨\n", liste_joueurs[i].pseudo);
-            
-            // Le mot break détruit la boucle "for"
-            // les joueurs suivants n'auront pas le droit de jouer 
             break;
         }
     }
